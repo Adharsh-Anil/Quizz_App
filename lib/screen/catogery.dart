@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/constants/category_list.dart';
+import 'package:quiz_app/db/userdb.dart';
 import 'package:quiz_app/screen/account.dart';
 import 'package:quiz_app/screen/questionLevel.dart';
 
@@ -17,6 +18,7 @@ final List<GridItem> gridItems = [
 class GridScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -24,15 +26,21 @@ class GridScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
                   child: Align(
                     alignment: Alignment.topLeft,
-                    child: Text(
-                      'Hi John',
-                      style: TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.bold,
+                    child: SizedBox(
+                      height: size.width * 0.12,
+                      width: size.width * 0.70,
+                      child: FittedBox(
+                        child: Text(
+                          'Hi, ${UsersDb.currentUser.name}',
+                          style: const TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -41,8 +49,7 @@ class GridScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (contex) => const AccountScreen()),
+                      MaterialPageRoute(builder: (contex) => AccountScreen()),
                     );
                   },
                   icon: const Icon(
@@ -70,10 +77,12 @@ class GridScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.black),
                   color: const Color.fromARGB(255, 207, 206, 205)),
-              child: const Center(
+              child: Center(
                 child: Text(
-                  'score : 789',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  'score : ${UsersDb.currentUser.totalScore}',
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 8, 87, 152)),
                 ),
               ),
             ),
@@ -101,7 +110,7 @@ class GridScreen extends StatelessWidget {
                       child: GridTile(
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(21, 109, 108, 109),
+                              color: const Color.fromARGB(21, 109, 108, 109),
                               borderRadius: BorderRadius.circular(20)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

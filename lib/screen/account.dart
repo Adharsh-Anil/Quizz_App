@@ -4,7 +4,7 @@ import 'package:quiz_app/screen/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AccountScreen extends StatelessWidget {
-  const AccountScreen({super.key});
+  AccountScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +20,15 @@ class AccountScreen extends StatelessWidget {
         children: [
           const Center(
             child: CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage('assets/images/account.png'),
+              radius: 60,
+              backgroundImage: AssetImage(
+                'assets/images/front img.jpg',
+              ),
             ),
           ),
-          const Text(
-            'John',
-            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          Text(
+            UsersDb.currentUser.name,
+            style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -37,14 +39,14 @@ class AccountScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(40),
                 color: Colors.purple,
               ),
-              child: const Padding(
-                padding: EdgeInsets.all(30.0),
-                child: Column(
+              child: Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: ListView(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
+                        const Text(
                           "Totalscore",
                           style: TextStyle(
                               fontSize: 30,
@@ -52,32 +54,71 @@ class AccountScreen extends StatelessWidget {
                               color: Colors.white),
                         ),
                         Text(
-                          '789',
-                          style: TextStyle(
+                          UsersDb.currentUser.totalScore.toString(),
+                          style: const TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
-                    CategoryScore(catogery: 'physics Score', score: 10),
-                    CategoryScore(catogery: 'History Score', score: 20),
-                    CategoryScore(catogery: 'Mathematics Score', score: 20),
-                    CategoryScore(catogery: 'Biology Score', score: 20),
-                    CategoryScore(catogery: 'Chemistry Score', score: 20),
-                    CategoryScore(catogery: 'sports Score', score: 20),
-                    CategoryScore(catogery: 'Chemistry Score', score: 20),
-                    CategoryScore(catogery: 'Chemistry Score', score: 20),
+                    CategoryScore(
+                      catogery: 'assets/images/atom.png',
+                      score: UsersDb.currentUser.marks['physics'] ?? 0,
+                      name: "Physics",
+                    ),
+                    CategoryScore(
+                      catogery: 'assets/images/history-book.png',
+                      score: UsersDb.currentUser.marks['history'] ?? 0,
+                      name: 'History',
+                    ),
+                    CategoryScore(
+                      catogery: 'assets/images/math.png',
+                      score: UsersDb.currentUser.marks['mathematics'] ?? 0,
+                      name: 'Mathematics',
+                    ),
+                    CategoryScore(
+                      catogery: 'assets/images/biology.png',
+                      score: UsersDb.currentUser.marks['biology'] ?? 0,
+                      name: 'Biology',
+                    ),
+                    CategoryScore(
+                      catogery: 'assets/images/chemistry.png',
+                      score: UsersDb.currentUser.marks['chemistry'] ?? 0,
+                      name: 'Chemistry',
+                    ),
+                    CategoryScore(
+                      catogery: 'assets/images/sport-35488.png',
+                      score: UsersDb.currentUser.marks['sports'] ?? 0,
+                      name: 'Sports',
+                    ),
+                    CategoryScore(
+                      catogery: 'assets/images/geography.png',
+                      score: UsersDb.currentUser.marks['geography'] ?? 0,
+                      name: 'Geography',
+                    ),
+                    CategoryScore(
+                      catogery: 'assets/images/politics.png',
+                      score: UsersDb.currentUser.marks['politics'] ?? 0,
+                      name: 'Politics',
+                    ),
                   ],
                 ),
               ),
             ),
           ),
           ElevatedButton(
-            style: const ButtonStyle(),
+            style: ButtonStyle(
+              backgroundColor: const MaterialStatePropertyAll(Colors.purple),
+              shape: MaterialStatePropertyAll(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+            ),
             onPressed: () async {
               Navigator.pushAndRemoveUntil(
                   context,
@@ -91,8 +132,8 @@ class AccountScreen extends StatelessWidget {
             },
             child: const Text(
               'Logout',
-              style: TextStyle(color: Colors.black),
             ),
+            
           ),
         ],
       ),
@@ -101,32 +142,42 @@ class AccountScreen extends StatelessWidget {
 }
 
 class CategoryScore extends StatelessWidget {
-  const CategoryScore({
-    super.key,
-    required this.catogery,
-    required this.score,
-  });
+  const CategoryScore(
+      {super.key,
+      required this.catogery,
+      required this.score,
+      required this.name});
 
   final String catogery;
   final int score;
+  final String name;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Divider(
+        const Divider(
           thickness: 1,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            Image.asset(
               catogery,
+              width: 50,
+              height: 50,
+            ),
+            const SizedBox(
+              width: 15,
+            ),
+            Text(
+              name,
               style: const TextStyle(
-                  fontSize: 20,
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
             ),
+            const Spacer(),
             Text(
               score.toString(),
               style: const TextStyle(

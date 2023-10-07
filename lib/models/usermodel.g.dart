@@ -23,13 +23,14 @@ class UserAdapter extends TypeAdapter<User> {
     )
       ..isLogin = fields[3] as bool
       ..totalScore = fields[4] as int
-      ..completedQuestion = (fields[5] as List).cast<Question>();
+      ..completedQuestion = (fields[5] as List).cast<Question>()
+      ..marks = (fields[6] as Map).cast<String, int>();
   }
 
   @override
   void write(BinaryWriter writer, User obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.name)
       ..writeByte(1)
@@ -41,7 +42,9 @@ class UserAdapter extends TypeAdapter<User> {
       ..writeByte(4)
       ..write(obj.totalScore)
       ..writeByte(5)
-      ..write(obj.completedQuestion);
+      ..write(obj.completedQuestion)
+      ..writeByte(6)
+      ..write(obj.marks);
   }
 
   @override

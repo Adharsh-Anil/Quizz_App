@@ -10,7 +10,6 @@ class LoginScreen extends StatelessWidget {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -19,140 +18,150 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: Form(
         key: _formKey,
-        child: Column(
-          children: [
-            Container(
-              height: 336,
-              width: size.width,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40),
-                    bottomRight: Radius.circular(40)),
-                color: Colors.purple,
-              ),
-              child: const SafeArea(
-                child: Padding(
-                  padding: EdgeInsets.only(top: 10, left: 10, right: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        height: 6,
-                      ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                height: 336,
+                width: size.width,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(40),
+                      bottomRight: Radius.circular(40)),
+                  color: Colors.purple,
+                ),
+                child: const SafeArea(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          height: 6,
+                        ),
 
-                      Text(
-                        'Welcome',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 45,
-                          color: Colors.white,
+                        Text(
+                          'Welcome',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 45,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      // Add some space between the texts
-                      Text(
-                        'Please login to join our journey',
-                        style: TextStyle(
-                          fontSize: 22,
-                          color: Colors.white,
+                        // Add some space between the texts
+                        Text(
+                          'Please login to join our journey',
+                          style: TextStyle(
+                            fontSize: 22,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Align(
-                        alignment: Alignment.center,
-                        child: CircleAvatar(
-                          radius: 50,
-                          backgroundImage:
-                              AssetImage('assets/images/account.png'),
+                        SizedBox(
+                          height: 15,
                         ),
-                      ),
-                    ],
+                        Align(
+                          alignment: Alignment.center,
+                          child: CircleAvatar(
+                            radius: 56,
+                            backgroundImage:
+                                AssetImage('assets/images/front img.jpg'),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 40),
-            LoginTextform(nameController: _nameController),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                controller: _emailController,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Email is required';
+              const SizedBox(height: 40),
+              LoginTextform(nameController: _nameController),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  controller: _emailController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Email is required';
+                    }
+                    if (!RegExp(r"^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
+                        .hasMatch(value)) {
+                      return 'Invalid email format';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    labelText: 'Email',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  controller: _passwordController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Password is required';
+                    }
+                    // Use regular expressions to check for the required criteria.
+                    if (!RegExp(r'^(?=.*[A-Z]).{8,}$').hasMatch(value)) {
+                      return 'Password must contain at least one capital letter';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    labelText: 'Password',
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      const MaterialStatePropertyAll(Colors.purple),
+                  shape: MaterialStatePropertyAll(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                ),
+                onPressed: () async {
+                  if (_nameController.text == 'a' &&
+                      _emailController.text == 'b' &&
+                      _passwordController.text == 'c') {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const BottomNav(),
+                    ));
                   }
-                  if (!RegExp(r"^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
-                      .hasMatch(value)) {
-                    return 'Invalid email format';
+                  if (_formKey.currentState!.validate()) {
+                    final User user = User(
+                        name: _nameController.text,
+                        email: _emailController.text,
+                        password: _passwordController.text);
+                    await UsersDb.checkUser(user);
+                    final sharedPref = await SharedPreferences.getInstance();
+                    await sharedPref.setBool('Login', true);
+                    UsersDb.getCurrentUser();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => GridScreen()),
+                    );
+                  } else {
+                    // print('Data is empty');
+                    return;
                   }
-                  return null;
                 },
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  labelText: 'Email',
-                ),
+                child: const Text('Login',style: TextStyle(fontSize: 17),),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                controller: _passwordController,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Password is required';
-                  }
-                  // Use regular expressions to check for the required criteria.
-                  if (!RegExp(r'^(?=.*[A-Z]).{8,}$').hasMatch(value)) {
-                    return 'Password must contain at least one capital letter';
-                  }
-                  return null;
-                },
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  labelText: 'Password',
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            ElevatedButton(
-              style: const ButtonStyle(),
-              onPressed: () async {
-                if (_nameController.text == 'a' &&
-                    _emailController.text == 'b' &&
-                    _passwordController.text == 'c') {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const BottomNav(),
-                  ));
-                }
-                if (_formKey.currentState!.validate()) {
-                  final User user = User(
-                      name: _nameController.text,
-                      email: _emailController.text,
-                      password: _passwordController.text);
-                  await UsersDb.checkUser(user);
-                  final sharedPref = await SharedPreferences.getInstance();
-                  await sharedPref.setBool('Login', true);
-                  UsersDb.getCurrentUser();
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => GridScreen()),
-                  );
-                } else {
-                  // print('Data is empty');
-                  return;
-                }
-              },
-              child: const Text('Login'),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

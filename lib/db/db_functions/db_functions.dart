@@ -20,7 +20,7 @@ class QuestionsDb extends ChangeNotifier {
       print("the  error is $e");
     }
 
-   await getAllQuestions();
+    await getAllQuestions();
   }
 
   Future<void> getAllQuestions() async {

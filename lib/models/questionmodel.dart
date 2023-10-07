@@ -9,7 +9,7 @@ enum Difficulty { easy, medium, hard }
 enum Category { physics, maths, chemistry, sports }
 
 @HiveType(typeId: 0)
-class Question {
+class Question{
   @HiveField(0)
   String question;
 

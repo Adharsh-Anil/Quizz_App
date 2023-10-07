@@ -60,7 +60,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
       body: SafeArea(
         child: Stack(
           children: [
-            SizedBox(
+            const SizedBox(
               height: double.infinity,
               width: double.infinity,
               // child: Image.asset(
@@ -294,7 +294,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 ),
                 Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     ElevatedButton.icon(
@@ -324,11 +324,11 @@ class _QuestionScreenState extends State<QuestionScreen> {
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.grey,
-                          side: BorderSide(width: 1)),
+                          side: const BorderSide(width: 1)),
                       icon: const Text('Next'),
                       label: const Icon(Icons.arrow_forward),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     )
                   ],

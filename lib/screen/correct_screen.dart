@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/db/db_functions/db_functions.dart';
 
 class CorrectAnswerScreen extends StatefulWidget {
-  CorrectAnswerScreen({Key? key, required this.color, required this.index,required this.selectedAnswer})
+  CorrectAnswerScreen(
+      {Key? key,
+      required this.color,
+      required this.index,
+      required this.selectedAnswer})
       : super(key: key);
 
   final Color color;
@@ -18,7 +22,6 @@ QuestionsDb db = QuestionsDb();
 int count = 0;
 
 class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -35,15 +38,14 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
           children: [
             Text(
               'Que- ${questIndex + 1}/${db.sortedQuestionsNotifier.value.length}',
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold, fontSize: 18),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             const SizedBox(
               height: 10,
             ),
-            Container(
-              height: 580,
-              width: 400,
+            SizedBox(
+              height: size.height * 0.70,
+              width: size.width,
               // page view builder
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -88,9 +90,11 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(color: Colors.black),
-                          color: widget.selectedAnswer[0]==null
+                          color: widget.selectedAnswer[0] == null
                               ? const Color.fromARGB(255, 232, 232, 232)
-                              : widget.selectedAnswer[0]! ? Colors.green :Colors.red,
+                              : widget.selectedAnswer[0]!
+                                  ? Colors.green
+                                  : Colors.red,
                         ),
                         child: Row(
                           children: [
@@ -114,9 +118,11 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(color: Colors.black),
-                          color: widget.selectedAnswer[1]==null
+                          color: widget.selectedAnswer[1] == null
                               ? const Color.fromARGB(255, 232, 232, 232)
-                              : widget.selectedAnswer[1]! ? Colors.green :Colors.red,
+                              : widget.selectedAnswer[1]!
+                                  ? Colors.green
+                                  : Colors.red,
                         ),
                         child: Row(
                           children: [
@@ -140,9 +146,11 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(color: Colors.black),
-                          color: widget.selectedAnswer[2]==null
+                          color: widget.selectedAnswer[2] == null
                               ? const Color.fromARGB(255, 232, 232, 232)
-                              : widget.selectedAnswer[2]! ? Colors.green :Colors.red,
+                              : widget.selectedAnswer[2]!
+                                  ? Colors.green
+                                  : Colors.red,
                         ),
                         child: Row(
                           children: [
@@ -166,9 +174,11 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(color: Colors.black),
-                          color: widget.selectedAnswer[3]==null
+                          color: widget.selectedAnswer[3] == null
                               ? const Color.fromARGB(255, 232, 232, 232)
-                              : widget.selectedAnswer[3]! ? Colors.green :Colors.red,
+                              : widget.selectedAnswer[3]!
+                                  ? Colors.green
+                                  : Colors.red,
                         ),
                         child: Row(
                           children: [
@@ -192,7 +202,6 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
             const SizedBox(
               height: 20,
             ),
-            
           ],
         ),
       ),

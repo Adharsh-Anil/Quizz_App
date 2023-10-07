@@ -21,7 +21,7 @@ void main() async {
   if (data.isEmpty) {
     await initial();
   }
-  //await data.close();
+  await data.close();
   runApp(const MyApp());
 }
 

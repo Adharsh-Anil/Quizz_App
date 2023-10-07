@@ -811,12 +811,757 @@ List<Map<String, dynamic>> questions = [
   // 
   // ------------Biology-------------
   {
-    'questions': '',
-    'answers': ['', '', '', ''],
+    'questions': 'What is the powerhouse of the cell responsible for producing energy?',
+    'answers': ['Ribosome', 'Nucleus', 'Mitochondrion', 'Chloroplast'],
+    'correct': 2,
+    'category': 'biology',
+    'level': 'easy'
+  },
+  {
+    'questions': 'Which gas do plants absorb from the atmosphere during photosynthesis?',
+    'answers': ['Oxygen', 'Carbon dioxide', 'Nitrogen', 'Hydrogen'],
     'correct': 1,
     'category': 'biology',
     'level': 'easy'
   },
+  {
+    'questions': 'What is the liquid part of blood that carries cells and nutrients throughout the body?',
+    'answers': ['Plasma', 'Platelets', 'Hemoglobin', 'Lymph'],
+    'correct': 0,
+    'category': 'biology',
+    'level': 'easy'
+  },
+  {
+    'questions': 'What is the largest organ in the human body?',
+    'answers': ['Brain', 'Heart', 'Liver', 'Skin'],
+    'correct': 3,
+    'category': 'biology',
+    'level': 'easy'
+  },
+  {
+    'questions': 'Which gas do humans breathe out as a waste product of respiration?',
+    'answers': ['Carbon dioxide', 'Oxygen', 'Nitrogen', 'Hydrogen'],
+    'correct': 0,
+    'category': 'biology',
+    'level': 'easy'
+  },
+  {
+    'questions': 'What is the process by which plants make their own food using sunlight, carbon dioxide, and water?',
+    'answers': ['Respiration', 'Fermentation', 'Photosynthesis', 'Digestion'],
+    'correct': 2,
+    'category': 'biology',
+    'level': 'easy'
+  },
+  {
+    'questions': 'What is the basic unit of life and the smallest functional unit of an organism?',
+    'answers': ['Cell', 'Atom', 'Molecule', 'Tissue'],
+    'correct': 0,
+    'category': 'biology',
+    'level': 'easy'
+  },
+  {
+    'questions': 'Which part of a plant is responsible for the absorption of water and nutrients from the soil?',
+    'answers': ['Leaves', 'Stem', 'Roots', 'Flowers'],
+    'correct': 2,
+    'category': 'biology',
+    'level': 'easy'
+  },
+  {
+    'questions': 'What is the process by which living organisms produce offspring of the same kind?',
+    'answers': ['Evolution', 'Reproduction', 'Adaptation', 'Mutation'],
+    'correct': 1,
+    'category': 'biology',
+    'level': 'easy'
+  },
+  {
+    'questions': 'What is the green pigment in plant cells that captures light energy for photosynthesis?',
+    'answers': [ 'Hemoglobin', 'Melanin', 'Insulin','Chlorophyll'],
+    'correct': 3,
+    'category': 'biology',
+    'level': 'easy'
+  },
+  // 
+  // 
+  // 
+  // 
+   {
+    'questions': 'What is the process by which cells break down glucose to produce energy?',
+    'answers': ['Photosynthesis', 'Respiration', 'Fermentation', 'Digestion'],
+    'correct': 1,
+    'category': 'biology',
+    'level': 'medium'
+  },
+  {
+    'questions': 'What is the chemical substance found in red blood cells that binds to oxygen for transport throughout the body?',
+    'answers': ['Insulin', 'Hemoglobin', 'Chlorophyll', 'Histamine'],
+    'correct': 1,
+    'category': 'biology',
+    'level': 'medium'
+  },
+  {
+    'questions': 'Which part of the human brain is responsible for regulating basic bodily functions like breathing and heart rate?',
+    'answers': ['Cerebrum', 'Cerebellum', 'Medulla oblongata', 'Hypothalamus'],
+    'correct': 2,
+    'category': 'biology',
+    'level': 'medium'
+  },
+  {
+    'questions': 'What is the smallest unit of life capable of carrying out all the processes necessary for life?',
+    'answers': ['Molecule', 'Cell', 'Organ', 'Organism'],
+    'correct': 1,
+    'category': 'biology',
+    'level': 'medium'
+  },
+  {
+    'questions': 'Which gas is essential for photosynthesis to occur in plants?',
+    'answers': [' Carbon dioxide', 'Oxygen', 'Nitrogen', 'Hydrogen'],
+    'correct': 0,
+    'category': 'biology',
+    'level': 'medium'
+  },
+  {
+    'questions': 'What is the name of the process by which plants release water vapor into the atmosphere through tiny openings in their leaves?',
+    'answers': ['Transpiration', 'Perspiration', 'Condensation', 'Evaporation'],
+    'correct': 0,
+    'category': 'biology',
+    'level': 'medium'
+  },
+  {
+    'questions': 'Which type of blood vessel carries blood away from the heart to other parts of the body?',
+    'answers': [ 'Vein', 'Capillary', 'Aorta','Artery'],
+    'correct': 3,
+    'category': 'biology',
+    'level': 'medium'
+  },
+  {
+    'questions': 'What is the term for the protective outer layer of the skin?',
+    'answers': ['Dermis', 'Epidermis', 'Hypodermis', 'Subcutaneous'],
+    'correct': 1,
+    'category': 'biology',
+    'level': 'medium'
+  },
+  {
+    'questions': ' In the human body, what is the role of the pancreas?',
+    'answers': [' Producing insulin to regulate blood sugar', 'Filtering waste from the blood', 'Digesting food in the stomach', 'Regulating body temperature'],
+    'correct': 0,
+    'category': 'biology',
+    'level': 'medium'
+  },
+  {
+    'questions': 'What is the scientific name for the process of cell division that results in two identical daughter cells?',
+    'answers': ['Fertilization', 'Meiosis', 'Mitosis', 'Replication'],
+    'correct': 2,
+    'category': 'biology',
+    'level': 'medium'
+  },
+  // 
+  // 
+  // 
+  // 
+  {
+    'questions': 'What is the process by which cells divide to form haploid gametes (sperm and egg cells)?',
+    'answers': ['Mitosis', 'Meiosis', 'Fertilization', 'Replication'],
+    'correct': 1,
+    'category': 'biology',
+    'level': 'hard'
+  },
+   {
+    'questions': 'Which organelle is responsible for protein synthesis in eukaryotic cells?',
+    'answers': ['Nucleus', 'Mitochondrion', 'Ribosome', ' Endoplasmic reticulum'],
+    'correct': 2,
+    'category': 'biology',
+    'level': 'hard'
+  },
+   {
+    'questions': 'What is the process by which green plants and some other organisms convert light energy into chemical energy in the form of glucose?',
+    'answers': ['Photosynthesis', 'Respiration', 'Fermentation', 'Oxidation'],
+    'correct': 0,
+    'category': 'biology',
+    'level': 'hard'
+  },
+   {
+    'questions': 'Which gas is produced as a waste product during cellular respiration in both plants and animals?',
+    'answers': ['Oxygen', 'Carbon dioxide', 'Nitrogen', 'Hydrogen'],
+    'correct': 1,
+    'category': 'biology',
+    'level': 'hard'
+  },
+   {
+    'questions': "What is the name of the process by which an organism's genetic material is copied to create an identical copy?",
+    'answers': ['Replication', 'Transcription', 'Translation', 'Mutation'],
+    'correct': 0,
+    'category': 'biology',
+    'level': 'hard'
+  },
+   {
+    'questions': 'What is the scientific name for the study of the interactions between living organisms and their environment?',
+    'answers': ['Genetics',  'Microbiology', 'Zoology','Ecology'],
+    'correct': 3,
+    'category': 'biology',
+    'level': 'hard'
+  },
+   {
+    'questions': 'Which type of blood cell is responsible for carrying oxygen throughout the body?',
+    'answers': ['White blood cell', 'Platelet', 'Red blood cell', 'Plasma cell'],
+    'correct': 2,
+    'category': 'biology',
+    'level': 'hard'
+  },
+   {
+    'questions': ' What is the largest internal organ in the human body and plays a crucial role in detoxification and metabolism?',
+    'answers': ['Heart', 'Kidney', 'Liver', 'Lungs'],
+    'correct': 2,
+    'category': 'biology',
+    'level': 'hard'
+  },
+   {
+    'questions': "What is the term for the region of the Earth's oceans where sunlight cannot penetrate, and photosynthesis cannot occur?",
+    'answers': ['Abyssal zone', 'Bathyal zone', 'Hadal zone', 'Aphotic zone'],
+    'correct': 3,
+    'category': 'biology',
+    'level': 'hard'
+  },
+   {
+    'questions': 'What is the process by which organisms evolve and adapt to their environment over long periods of time?',
+    'answers': ['Mutation', 'Natural selection', 'Speciation', 'Fertilization'],
+    'correct': 1,
+    'category': 'biology',
+    'level': 'hard'
+  },
+  // 
+  // 
+  // 
+  // ----------------Chemistry------------------
+  {
+    'questions': 'What is the chemical symbol for oxygen?',
+    'answers': ['O2', 'C', 'H', 'O'],
+    'correct': 3,
+    'category': 'chemistry',
+    'level': 'easy'
+  },
+  {
+    'questions': 'What is the chemical formula for water?',
+    'answers': ['H2O2', 'CO2', 'H2O', 'O2'],
+    'correct': 2,
+    'category': 'chemistry',
+    'level': 'easy'
+  },
+
+{
+    'questions': 'What is the chemical symbol for hydrogen?',
+    'answers': ['H2O', 'He', 'H', 'O2'],
+    'correct': 2,
+    'category': 'chemistry',
+    'level': 'easy'
+  },
+
+{
+    'questions': 'Which of the following is a noble gas?',
+    'answers': ['Oxygen (O2)', ' Carbon (C)', 'Helium (He)', 'Sodium (Na)'],
+    'correct': 2,
+    'category': 'chemistry',
+    'level': 'easy'
+  },
+
+{
+    'questions': 'What is the chemical symbol for carbon?',
+    'answers': ['Ca', 'C', 'Co', 'Cr'],
+    'correct': 1,
+    'category': 'chemistry',
+    'level': 'easy'
+  },
+
+{
+    'questions': 'Which gas is commonly known as laughing gas and has the chemical formula N2O?',
+    'answers': ['Nitrogen dioxide', 'Nitrogen monoxide', 'Nitrogen pentoxide', 'Nitrous oxide'],
+    'correct': 3,
+    'category': 'chemistry',
+    'level': 'easy'
+  },
+
+{
+    'questions': 'What is the chemical symbol for gold?',
+    'answers': ['Go', 'Au', 'Ag', 'Gu'],
+    'correct': 1,
+    'category': 'chemistry',
+    'level': 'easy'
+  },
+
+{
+    'questions': 'What is the chemical formula for table salt (sodium chloride)?',
+    'answers': ['NaCl2', 'Na2Cl', 'NaCl', 'HCl'],
+    'correct': 2,
+    'category': 'chemistry',
+    'level': 'easy'
+  },
+
+{
+    'questions': 'Which gas is essential for respiration and has the chemical formula O2?',
+    'answers': ['Oxygen', 'Ozone', 'Carbon dioxide', 'Hydrogen'],
+    'correct': 0,
+    'category': 'chemistry',
+    'level': 'easy'
+  },
+
+{
+    'questions': 'What is the chemical symbol for silver?',
+    'answers': ['Si', 'Ag', 'Au', 'Sr'],
+    'correct': 1,
+    'category': 'chemistry',
+    'level': 'easy'
+  },
+  // 
+  //
+  // 
+  // 
+  {
+    'questions': "Which element is the most abundant in Earth's crust?",
+    'answers': ['Oxygen', 'Silicon', 'Carbon', 'Hydrogen'],
+    'correct': 0,
+    'category': 'chemistry',
+    'level': 'medium'
+  },
+  {
+    'questions': 'What is the chemical formula for methane, a greenhouse gas produced by natural processes and human activities?',
+    'answers': ['CH4', 'CO2', 'H2O', 'NH3'],
+    'correct': 0,
+    'category': 'chemistry',
+    'level': 'medium'
+  },
+  {
+    'questions': 'What is the pH value of a neutral solution?',
+    'answers': ['0', '7', '14', '-7'],
+    'correct': 1,
+    'category': 'chemistry',
+    'level': 'medium'
+  },
+  {
+    'questions': 'Which gas is responsible for the "rotten egg" smell and is often added to natural gas to give it an odor?',
+    'answers': ['Oxygen', 'Carbon dioxide', 'Sulfur dioxide', 'Hydrogen sulfide'],
+    'correct': 3,
+    'category': 'chemistry',
+    'level': 'medium'
+  },
+  {
+    'questions': 'What is the chemical formula for sulfuric acid, a strong and corrosive acid?',
+    'answers': ['H2SO3', 'HCl', 'H2SO4', 'HNO3'],
+    'correct': 2,
+    'category': 'chemistry',
+    'level': 'medium'
+  },
+  {
+    'questions': 'Which gas is commonly used for inflating balloons and has the chemical formula He?',
+    'answers': ['Helium', 'Hydrogen', 'Nitrogen', 'Neon'],
+    'correct': 0,
+    'category': 'chemistry',
+    'level': 'medium'
+  },
+  {
+    'questions': ' What is the chemical symbol for iron?',
+    'answers': ['Fe', 'Ir', 'In', 'Au'],
+    'correct': 0,
+    'category': 'chemistry',
+    'level': 'medium'
+  },
+  {
+    'questions': 'What is the process by which a liquid turns into a gas at a temperature below its boiling point?',
+    'answers': ['Melting', 'Evaporation', 'Condensation', 'Sublimation'],
+    'correct': 1,
+    'category': 'chemistry',
+    'level': 'medium'
+  },
+  {
+    'questions': 'What is the chemical formula for carbon dioxide, a greenhouse gas produced by combustion and respiration?',
+    'answers': ['CO', 'CO2', 'CH4', 'O2'],
+    'correct': 1,
+    'category': 'chemistry',
+    'level': 'medium'
+  },
+  {
+    'questions': 'Which element is the primary component of organic compounds and is the basis of life on Earth?',
+    'answers': ['Nitrogen', 'Carbon', 'Oxygen', 'Hydrogen'],
+    'correct': 1,
+    'category': 'chemistry',
+    'level': 'medium'
+  },
+  // 
+  // 
+  // 
+  // 
+  {
+    'questions': 'What is the chemical formula for hydrogen peroxide, a powerful oxidizer and disinfectant?',
+    'answers': ['H2O', 'HO', 'H2O2', 'HO2'],
+    'correct': 2,
+    'category': 'chemistry',
+    'level': 'hard'
+  },
+   {
+    'questions': 'What is the name of the process by which a substance changes directly from a solid to a gas without passing through the liquid phase?',
+    'answers': ['Vaporization', 'Sublimation', 'Fusion', 'Condensation'],
+    'correct': 1,
+    'category': 'chemistry',
+    'level': 'hard'
+  },
+   {
+    'questions': ' Which element has the highest melting point and is often used in high-temperature applications such as aerospace and nuclear reactors?',
+    'answers': ['Tungsten (W)', 'Titanium (Ti)', ' Platinum (Pt)', 'Mercury (Hg)'],
+    'correct': 0,
+    'category': 'chemistry',
+    'level': 'hard'
+  },
+   {
+    'questions': 'What is the chemical formula for acetic acid, the main component of vinegar?',
+    'answers': ['CH3COOH', 'H2SO4', 'NH3', 'C6H12O6'],
+    'correct': 0,
+    'category': 'chemistry',
+    'level': 'hard'
+  },
+   {
+    'questions': ' Which noble gas is commonly used in lighting, such as neon signs?',
+    'answers': ['Krypton (Kr)', 'Argon (Ar)', 'Xenon (Xe)', ' Radon (Rn)'],
+    'correct': 2,
+    'category': 'chemistry',
+    'level': 'hard'
+  },
+   {
+    'questions': 'What is the term for a substance that speeds up a chemical reaction without being consumed in the process?',
+    'answers': ['Catalyst', 'Reactant', 'Product', 'Inhibitor'],
+    'correct': 0,
+    'category': 'chemistry',
+    'level': 'hard'
+  },
+   {
+    'questions': 'Which type of bond involves the sharing of electrons between two atoms and is commonly found in molecules like water (H2O)?',
+    'answers': ['Ionic bond', 'Covalent bond', 'Metallic bond', 'Hydrogen bond'],
+    'correct': 1,
+    'category': 'chemistry',
+    'level': 'hard'
+  },
+   {
+    'questions': 'What is the chemical name for the "salt" used to melt ice on roads and sidewalks?',
+    'answers': ['Sodium hydroxide', 'Calcium carbonate', 'Sodium chloride', 'Potassium permanganate'],
+    'correct': 2,
+    'category': 'chemistry',
+    'level': 'hard'
+  },
+   {
+    'questions': 'What is the term for a substance that can act as both an acid and a base, such as water?',
+    'answers': ['Neutralizer', 'Buffer', 'Catalyst', 'Indicator'],
+    'correct': 1,
+    'category': 'chemistry',
+    'level': 'hard'
+  },
+   {
+    'questions': ' Which element is used in the production of nuclear energy and atomic bombs and has the chemical symbol U?',
+    'answers': ['Uranium (U)', 'Ununquadium (Uuq)', 'Ununpentium (Uup)', 'Ununtrium (Uut)'],
+    'correct': 0,
+    'category': 'chemistry',
+    'level': 'hard'
+  },
+  // 
+  // 
+  // 
+  // ------------Sports-------------
+  {
+    'questions':" In which sport do players try to score goals by hitting a ball into the opposing team's net?",
+    'answers': ['Basketball', 'Football', 'Tennis', 'Golf'],
+    'correct': 1,
+    'category': 'sports',
+    'level': 'easy'
+  },
+  {
+    'questions': 'What is the highest possible score in a game of bowling?',
+    'answers': ['100', '200', '300', '400'],
+    'correct': 2,
+    'category': 'sports',
+    'level': 'easy'
+  },
+  {
+    'questions': 'Which sport is known as "The Sport of Kings"?',
+    'answers': ['Baseball', 'Cricket', 'Polo', 'Badminton'],
+    'correct': 2,
+    'category': 'sports',
+    'level': 'easy'
+  },
+  {
+    'questions': 'In which Olympic sport would you perform a vault?',
+    'answers': ['Swimming', 'Gymnastics', 'Archery', 'Rowing'],
+    'correct': 1,
+    'category': 'sports',
+    'level': 'easy'
+  },
+  {
+    'questions': 'How many players are there on a standard soccer (football) team, including substitutes?',
+    'answers': ['7', '9', '11', '13'],
+    'correct': 2,
+    'category': 'sports',
+    'level': 'easy'
+  },
+  {
+    'questions': 'What is the main objective of the game of tennis?',
+    'answers': ['Score touchdowns', 'Score runs', 'Score goals', 'Score points by hitting a ball over the net'],
+    'correct': 3,
+    'category': 'sports',
+    'level': 'easy'
+  },
+  {
+    'questions': 'Which sport involves throwing a heavy metal ball as far as possible?',
+    'answers': ['Shot put', 'Javelin', 'Discus', 'Hammer throw'],
+    'correct': 0,
+    'category': 'sports',
+    'level': 'easy'
+  },
+
+  {
+    'questions': 'In which sport would you perform a slam dunk?',
+    'answers': ['Volleyball', 'Basketball', 'Rugby', ' Ice hockey'],
+    'correct': 1,
+    'category': 'sports',
+    'level': 'easy'
+  },
+  {
+    'questions': "Which sport is often referred to as America's pastime?",
+    'answers': ['Basketball', 'Soccer', 'Baseball', 'Tennis'],
+    'correct': 0,
+    'category': 'sports',
+    'level': 'easy'
+  },
+  {
+    'questions': 'How many players are there on a standard basketball team, including substitutes?',
+    'answers': ['5', '7', '12', '10'],
+    'correct': 3,
+    'category': 'sports',
+    'level': 'easy'
+  },
+  // 
+  // 
+  // 
+  // 
+  {
+    'questions': 'In which sport would you perform a "slalom" maneuver?',
+    'answers': ['Skiing', 'Table tennis', 'Volleyball', 'Cycling'],
+    'correct': 0,
+    'category': 'sports',
+    'level': 'medium'
+  },
+  {
+    'questions': 'Which country is known for inventing the sport of cricket?',
+    'answers': ['England', 'India', 'Australia', 'South Africa'],
+    'correct': 0,
+    'category': 'sports',
+    'level': 'medium'
+  },
+  {
+    'questions': 'Who is often referred to as "The Greatest" and is a legendary boxer known for his quick footwork and powerful punches?',
+    'answers': [ 'Mike Tyson', 'Joe Frazier', 'Muhammad Ali','George Foreman'],
+    'correct': 2,
+    'category': 'sports',
+    'level': 'medium'
+  },
+  {
+    'questions': 'What is the term for a perfect score of 10 in the sport of gymnastics?',
+    'answers': ['Perfect 10', 'Flawless 10',"Gymnast's 10", 'Olympic 10'],
+    'correct': 0,
+    'category': 'sports',
+    'level': 'medium'
+  },
+  {
+    'questions': 'Which sport involves sliding a stone on ice towards a target area, with the goal of landing it in the center?',
+    'answers': ['Bobsleigh', 'Ice hockey', 'Figure skating', 'Curling'],
+    'correct': 3,
+    'category': 'sports',
+    'level': 'medium'
+  },
+  {
+    'questions': 'In which Olympic event would you perform a triple axel or a camel spin?',
+    'answers': ['Diving', 'Figure skating', 'Long jump', 'Synchronized swimming'],
+    'correct': 1,
+    'category': 'sports',
+    'level': 'medium'
+  },
+  {
+    'questions': 'Which sport is associated with the term "grand slam" and involves hitting a ball over a net with a racket?',
+    'answers': ['Baseball', 'Golf', 'Tennis', 'Badminton'],
+    'correct': 2,
+    'category': 'sports',
+    'level': 'medium'
+  },
+  {
+    'questions': 'What is the maximum number of players allowed on the field for a soccer (football) team during a match?',
+    'answers': ['9', '11', '13', '15'],
+    'correct': 1,
+    'category': 'sports',
+    'level': 'medium'
+  },
+  {
+    'questions': 'Who is known as the "Flying Finn" and is considered one of the greatest long-distance runners in history?',
+    'answers': ['Usain Bolt', 'Carl Lewis', 'Emil Zátopek', 'Paavo Nurmi'],
+    'correct': 3,
+    'category': 'sports',
+    'level': 'medium'
+  },
+  {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'sports',
+    'level': 'medium'
+  },
+  // 
+  // 
+  // 
+  // 
+   {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'sports',
+    'level': 'hard'
+  },{
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'sports',
+    'level': 'hard'
+  },
+  {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'sports',
+    'level': 'hard'
+  },
+  {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'sports',
+    'level': 'hard'
+  },
+  {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'sports',
+    'level': 'hard'
+  },
+  // 
+  // 
+  // 
+  // ----------Geography-----------
+   {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'geography',
+    'level': 'easy'
+  },
+   {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'geography',
+    'level': 'easy'
+  },
+   {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'geography',
+    'level': 'easy'
+  },
+  // 
+  // 
+  // 
+  // 
+  {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'geography',
+    'level': 'medium'
+  },
+ {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'geography',
+    'level': 'medium'
+  },
+   {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'geography',
+    'level': 'medium'
+  },
+  // 
+  // 
+  // 
+  // 
+  {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'geography',
+    'level': 'hard'
+  },
+  {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'geography',
+    'level': 'hard'
+  },
+  {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'geography',
+    'level': 'hard'
+  },
+  {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'geography',
+    'level': 'hard'
+  },
+  // 
+  // 
+  // 
+  //-------------politics-------------- 
+{
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'politics',
+    'level': 'easy'
+  },
+  {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'politics',
+    'level': 'medium'
+  },
+  {
+    'questions': '',
+    'answers': ['', '', '', ''],
+    'correct': 1,
+    'category': 'politics',
+    'level': 'hard'
+  },
+
+
+
+
+
+
+
+
+  
+
 
 
 ];

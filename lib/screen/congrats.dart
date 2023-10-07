@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/db/userdb.dart';
+import 'package:quiz_app/screen/catogery.dart';
 import 'package:quiz_app/screen/correct_screen.dart';
 import 'package:quiz_app/screen/question.dart';
 import 'package:quiz_app/screen/select.dart';
@@ -9,7 +10,6 @@ import '../db/db_functions/db_functions.dart';
 class CongratsScreen extends StatefulWidget {
   final Color color;
   CongratsScreen({super.key, required this.color});
-
 
   @override
   State<CongratsScreen> createState() => _CongratsScreenState();
@@ -30,7 +30,6 @@ class _CongratsScreenState extends State<CongratsScreen> {
 
   @override
   void initState() {
-    
     super.initState();
   }
 
@@ -41,6 +40,16 @@ class _CongratsScreenState extends State<CongratsScreen> {
     return Scaffold(
       backgroundColor: Colors.purple,
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GridScreen(),
+                  ),
+                  (route) => false);
+            },
+            icon: Icon(Icons.home)),
         backgroundColor: Colors.purple,
         elevation: 0,
       ),
@@ -52,13 +61,13 @@ class _CongratsScreenState extends State<CongratsScreen> {
               alignment: Alignment.center,
               child: Text(
                 '${result.toString()} of ${db.answers.length} are correct',
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Padding(
@@ -82,25 +91,25 @@ class _CongratsScreenState extends State<CongratsScreen> {
                         color: Colors.purple,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 18,
                     ),
                     Text(
                       'You have total ${UsersDb.currentUser.totalScore} points',
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.purpleAccent,
                           fontSize: 20,
                           fontWeight: FontWeight.w600),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Text(
+                    const Text(
                       'Tap below question number to \nview correct answer',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.deepPurple),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     SizedBox(
@@ -162,7 +171,7 @@ class _CongratsScreenState extends State<CongratsScreen> {
             ),
             ElevatedButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(Colors.white),
+                backgroundColor: const MaterialStatePropertyAll(Colors.white),
                 shape: MaterialStatePropertyAll(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
@@ -170,14 +179,14 @@ class _CongratsScreenState extends State<CongratsScreen> {
                 ),
               ),
               onPressed: () {
-                db.answers.fillRange(0, db.answers.length,null);
-                Navigator.push(
+                db.answers.fillRange(0, db.answers.length, null);
+                Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
                             QuestionScreen(color: widget.color, index: 0)));
               },
-              child: Text(
+              child: const Text(
                 'Try Again',
                 style: TextStyle(
                     color: Colors.purple,

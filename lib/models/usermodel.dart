@@ -21,5 +21,9 @@ class User {
 
   @HiveField(5)
   List<Question> completedQuestion = [];
+
+  @HiveField(6)
+  Map<String, int> marks = {};
+
   User({required this.name, required this.email, required this.password});
 }

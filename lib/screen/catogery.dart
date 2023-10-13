@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/constants/category_list.dart';
 import 'package:quiz_app/db/userdb.dart';
 import 'package:quiz_app/screen/account.dart';
-import 'package:quiz_app/screen/questionLevel.dart';
+import 'package:quiz_app/screen/question_level.dart';
 
 final List<GridItem> gridItems = [
   GridItem(categoryItems[0], 'assets/images/atom.png', Colors.red),
   GridItem(categoryItems[1], 'assets/images/history-book.png', Colors.amber),
   GridItem(categoryItems[2], 'assets/images/math.png', Colors.red),
-  GridItem(categoryItems[3], 'assets/images/biology.png', Colors.brown),
+  GridItem(categoryItems[3], 'assets/images/biology.png', Colors.deepPurple),
   GridItem(categoryItems[4], 'assets/images/chemistry.png', Colors.yellow),
   GridItem(categoryItems[5], 'assets/images/sport-35488.png', Colors.blue),
   GridItem(categoryItems[6], 'assets/images/geography.png', Colors.teal),
@@ -16,6 +16,8 @@ final List<GridItem> gridItems = [
 ];
 
 class GridScreen extends StatelessWidget {
+  const GridScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -49,7 +51,7 @@ class GridScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (contex) => AccountScreen()),
+                      MaterialPageRoute(builder: (contex) => const AccountScreen()),
                     );
                   },
                   icon: const Icon(
@@ -91,9 +93,9 @@ class GridScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, crossAxisSpacing: 2, mainAxisSpacing: 2
-                      //   Number of columns in the grid
-                      ),
+                    crossAxisCount: 2, crossAxisSpacing: 2, mainAxisSpacing: 2,
+                    //   Number of columns in the grid
+                  ),
                   itemCount: gridItems.length,
                   itemBuilder: (BuildContext context, int index) {
                     return InkWell(
@@ -117,8 +119,9 @@ class GridScreen extends StatelessWidget {
                             children: [
                               Image.asset(
                                 gridItems[index].imagePath,
-                                width: 130,
-                                height: 120,
+                                fit: BoxFit.cover,
+                                width: 110,
+                                height: 110,
                               ),
                               const SizedBox(height: 10),
                               Text(

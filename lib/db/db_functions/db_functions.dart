@@ -14,10 +14,9 @@ class QuestionsDb extends ChangeNotifier {
   Future addQuestions(Question question) async {
     try {
       final data = await Hive.openBox<Question>(dbName);
-      int id = await data.add(question);
-      print("the id of the model is${id}");
+      await data.add(question);
     } catch (e) {
-      print("the  error is $e");
+      e;
     }
 
     await getAllQuestions();
@@ -25,11 +24,9 @@ class QuestionsDb extends ChangeNotifier {
 
   Future<void> getAllQuestions() async {
     final data = await Hive.openBox<Question>(dbName);
-    print("the length of the database of ${data.values.length}");
     questionListNotifier.value.clear();
     questionListNotifier.value.addAll(data.values);
     questionListNotifier.notifyListeners();
-    print(questionListNotifier.value);
   }
 
   Future<void> deleteDB(int a) async {
@@ -55,7 +52,6 @@ class QuestionsDb extends ChangeNotifier {
             question.difficulty.toLowerCase() == difficulty.toLowerCase())
         .toList();
     sortedQuestionsNotifier.value = result;
-    print(result.length);
     answers = List.filled(sortedQuestionsNotifier.value.length, null);
   }
 }

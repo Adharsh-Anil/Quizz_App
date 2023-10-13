@@ -9,7 +9,7 @@ import '../db/db_functions/db_functions.dart';
 
 class CongratsScreen extends StatefulWidget {
   final Color color;
-  CongratsScreen({super.key, required this.color});
+  const CongratsScreen({super.key, required this.color});
 
   @override
   State<CongratsScreen> createState() => _CongratsScreenState();
@@ -45,11 +45,11 @@ class _CongratsScreenState extends State<CongratsScreen> {
               Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => GridScreen(),
+                    builder: (context) => const GridScreen(),
                   ),
                   (route) => false);
             },
-            icon: Icon(Icons.home)),
+            icon: const Icon(Icons.home)),
         backgroundColor: Colors.purple,
         elevation: 0,
       ),
@@ -117,10 +117,6 @@ class _CongratsScreenState extends State<CongratsScreen> {
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
-                          print({
-                            db.sortedQuestionsNotifier.value[index]
-                                .correctAnswer
-                          });
                           bool? wright = db.answers[index] != null
                               ? db.answers[index] ==
                                   db.sortedQuestionsNotifier.value[index]
@@ -138,7 +134,6 @@ class _CongratsScreenState extends State<CongratsScreen> {
                                           .correctAnswer) {
                                 boolArry[db.answers[index]!] = false;
                               }
-                              print(boolArry);
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(

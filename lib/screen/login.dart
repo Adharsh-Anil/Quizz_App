@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:quiz_app/db/userdb.dart';
 import 'package:quiz_app/models/usermodel.dart';
@@ -58,7 +60,7 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 15,
+                          height: 12,
                         ),
                         Align(
                           alignment: Alignment.center,
@@ -107,7 +109,7 @@ class LoginScreen extends StatelessWidget {
                     }
                     // Use regular expressions to check for the required criteria.
                     if (!RegExp(r'^(?=.*[A-Z]).{8,}$').hasMatch(value)) {
-                      return 'Password must contain at least one capital letter';
+                      return 'Password must contain at least 8 letters and one capital letter';
                     }
                     return null;
                   },
@@ -151,14 +153,17 @@ class LoginScreen extends StatelessWidget {
                     UsersDb.getCurrentUser();
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => GridScreen()),
+                      MaterialPageRoute(builder: (context) => const GridScreen()),
                     );
                   } else {
                     // print('Data is empty');
                     return;
                   }
                 },
-                child: const Text('Login',style: TextStyle(fontSize: 17),),
+                child: const Text(
+                  'Login',
+                  style: TextStyle(fontSize: 17),
+                ),
               ),
             ],
           ),

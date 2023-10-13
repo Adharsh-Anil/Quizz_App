@@ -22,10 +22,10 @@ class AdminQuesList extends StatelessWidget {
               thickness: 2,
             ),
             itemBuilder: (context, index) {
-              final Question = queList[index];
+              final question = queList[index];
               return ListTile(
                 title: Text(
-                  Question.question,
+                  question.question,
                   style: const TextStyle(fontSize: 18),
                 ),
                 trailing: Row(
@@ -37,7 +37,7 @@ class AdminQuesList extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                QueEditScreen(question: Question, index: index),
+                                QueEditScreen(question: question, index: index),
                           ),
                         );
                       },

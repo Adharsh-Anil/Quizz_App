@@ -4,9 +4,9 @@ import 'package:hive/hive.dart';
 
 part 'questionmodel.g.dart';
 
-enum Difficulty { easy, medium, hard }
 
-enum Category { physics, maths, chemistry, sports }
+
+
 
 @HiveType(typeId: 0)
 class Question{

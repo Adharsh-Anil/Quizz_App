@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/db/db_functions/db_functions.dart';
 
 class CorrectAnswerScreen extends StatefulWidget {
-  CorrectAnswerScreen(
+  const CorrectAnswerScreen(
       {Key? key,
       required this.color,
       required this.index,
@@ -11,7 +11,7 @@ class CorrectAnswerScreen extends StatefulWidget {
 
   final Color color;
   final int index;
-  List<bool?> selectedAnswer;
+  final List<bool?> selectedAnswer;
 
   @override
   CorrectAnswerScreenState createState() => CorrectAnswerScreenState();
@@ -44,7 +44,7 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
               height: 10,
             ),
             SizedBox(
-              height: size.height * 0.70,
+              height: size.height * 0.65,
               width: size.width,
               // page view builder
               child: Padding(
@@ -60,7 +60,7 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                     children: [
                       SingleChildScrollView(
                         child: Container(
-                          height: 250,
+                          height: size.height * 0.25,
                           width: size.width,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(40),
@@ -85,7 +85,7 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                       Container(
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.all(8),
-                        height: 50,
+                        height: size.height * .06,
                         width: size.width,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
@@ -99,7 +99,7 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                         child: Row(
                           children: [
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.84,
+                              width: MediaQuery.of(context).size.width * 0.70,
                               child: Text(
                                   'A. ${db.sortedQuestionsNotifier.value[widget.index].answers[0]}',
                                   style: const TextStyle(
@@ -113,7 +113,7 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                       Container(
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.all(8),
-                        height: 50,
+                        height: size.height * .06,
                         width: size.width,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
@@ -127,7 +127,7 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                         child: Row(
                           children: [
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.84,
+                              width: MediaQuery.of(context).size.width * 0.70,
                               child: Text(
                                   'B. ${db.sortedQuestionsNotifier.value[widget.index].answers[1]}',
                                   style: const TextStyle(
@@ -141,7 +141,7 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                       Container(
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.all(8),
-                        height: 50,
+                        height: size.height * 0.06,
                         width: size.width,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
@@ -155,7 +155,7 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                         child: Row(
                           children: [
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.84,
+                              width: MediaQuery.of(context).size.width * 0.70,
                               child: Text(
                                   'C. ${db.sortedQuestionsNotifier.value[widget.index].answers[2]}',
                                   style: const TextStyle(
@@ -169,7 +169,7 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                       Container(
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.all(8),
-                        height: 50,
+                        height: size.height * .06,
                         width: size.width,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
@@ -183,7 +183,7 @@ class CorrectAnswerScreenState extends State<CorrectAnswerScreen> {
                         child: Row(
                           children: [
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.84,
+                              width: MediaQuery.of(context).size.width * 0.70,
                               child: Text(
                                   'D. ${db.sortedQuestionsNotifier.value[widget.index].answers[3]}',
                                   style: const TextStyle(

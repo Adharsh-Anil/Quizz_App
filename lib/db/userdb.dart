@@ -14,12 +14,8 @@ class UsersDb extends ChangeNotifier {
 
   static Future<User?> getCurrentUser() async {
     try {
-      print('inside current user finder');
       final data = await Hive.openBox<User>(dbUser);
-      print(data.values.length);
-      print(data.values.first.email);
       for (var user in data.values) {
-        print('user is ---> ${user.isLogin}');
         if (user.isLogin) {
           currentUser = user;
           return user;
@@ -27,7 +23,6 @@ class UsersDb extends ChangeNotifier {
       }
       return null;
     } catch (e) {
-      print(e.toString());
       return null;
     }
   }
@@ -38,7 +33,7 @@ class UsersDb extends ChangeNotifier {
       final data = await Hive.openBox<User>(dbUser);
       await data.add(user);
     } catch (e) {
-      print(e.toString());
+      e;
     }
   }
 
@@ -53,7 +48,7 @@ class UsersDb extends ChangeNotifier {
       }
       await addUser(user);
     } catch (e) {
-      print(e.toString());
+      e;
     }
   }
 
@@ -72,26 +67,26 @@ class UsersDb extends ChangeNotifier {
           user.totalScore += 10;
           if (!user.marks
               .containsKey(db.sortedQuestionsNotifier.value[i].category)) {
-            user.marks[db.sortedQuestionsNotifier.value[i].category]=0;
+            user.marks[db.sortedQuestionsNotifier.value[i].category] = 0;
           }
-          int score=user.marks[db.sortedQuestionsNotifier.value[i].category]!;
-          user.marks[db.sortedQuestionsNotifier.value[i].category]=score+10;
+          int score = user.marks[db.sortedQuestionsNotifier.value[i].category]!;
+          user.marks[db.sortedQuestionsNotifier.value[i].category] = score + 10;
         } else if (db.sortedQuestionsNotifier.value[i].difficulty == 'medium') {
           user.totalScore += 20;
           if (!user.marks
               .containsKey(db.sortedQuestionsNotifier.value[i].category)) {
-            user.marks[db.sortedQuestionsNotifier.value[i].category]=0;
+            user.marks[db.sortedQuestionsNotifier.value[i].category] = 0;
           }
-          int score=user.marks[db.sortedQuestionsNotifier.value[i].category]!;
-          user.marks[db.sortedQuestionsNotifier.value[i].category]=score+20;
+          int score = user.marks[db.sortedQuestionsNotifier.value[i].category]!;
+          user.marks[db.sortedQuestionsNotifier.value[i].category] = score + 20;
         } else {
           user.totalScore += 30;
           if (!user.marks
               .containsKey(db.sortedQuestionsNotifier.value[i].category)) {
-            user.marks[db.sortedQuestionsNotifier.value[i].category]=0;
+            user.marks[db.sortedQuestionsNotifier.value[i].category] = 0;
           }
-          int score=user.marks[db.sortedQuestionsNotifier.value[i].category]!;
-          user.marks[db.sortedQuestionsNotifier.value[i].category]=score+30;
+          int score = user.marks[db.sortedQuestionsNotifier.value[i].category]!;
+          user.marks[db.sortedQuestionsNotifier.value[i].category] = score + 30;
         }
       }
     }
@@ -107,5 +102,4 @@ class UsersDb extends ChangeNotifier {
         currentUser.name == user.name && currentUser.email == user.email);
     data.putAt(index, user);
   }
-
 }

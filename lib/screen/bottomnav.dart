@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/screen/admin.dart';
-import 'package:quiz_app/screen/adminQueList.dart';
+import 'package:quiz_app/screen/admin_quelist.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});

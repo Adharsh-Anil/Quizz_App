@@ -4,7 +4,7 @@ import 'package:quiz_app/screen/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AccountScreen extends StatelessWidget {
-  AccountScreen({super.key});
+  const AccountScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

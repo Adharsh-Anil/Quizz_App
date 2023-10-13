@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:quiz_app/db/userdb.dart';
 import 'package:quiz_app/screen/catogery.dart';
@@ -33,9 +35,7 @@ class SplashScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 25,
-                ),
+                const Spacer(),
                 SizedBox(
                   width: 340,
                   height: 50,
@@ -53,7 +53,7 @@ class SplashScreen extends StatelessWidget {
                         await UsersDb.getCurrentUser();
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(builder: (context) => GridScreen()),
+                          MaterialPageRoute(builder: (context) => const GridScreen()),
                         );
                       } else {
                         Navigator.pushReplacement(
@@ -66,6 +66,7 @@ class SplashScreen extends StatelessWidget {
                     child: const Text('Get Started'),
                   ),
                 ),
+                const SizedBox(height: 20,),
               ],
             ),
           ),

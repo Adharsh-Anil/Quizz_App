@@ -1,4 +1,6 @@
 
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:quiz_app/constants/category_list.dart';
 import 'package:quiz_app/db/db_functions/db_functions.dart';
@@ -163,7 +165,6 @@ class _QueEditScreenState extends State<QueEditScreen> {
                       validateCorrectAnswer()) {
                     if (selectedCategory == null ||
                         selectedDifficulty == null) {
-                      print('add dropdown field');
                       // Category and/or difficulty not selected, show an error message.
                       final ScaffoldMessengerState scaffoldMessenger =
                           ScaffoldMessenger.of(context);
@@ -194,11 +195,7 @@ class _QueEditScreenState extends State<QueEditScreen> {
                         index: widget.index,
                         question: question,
                       );
-                      print(question.question);
-                      print(question.answers);
-                      print(question.correctAnswer);
-                      print(question.difficulty);
-                      print(question.category);
+                     
                       questionController.clear();
                       answer0Controller.clear();
                       answer1Controller.clear();
@@ -212,8 +209,6 @@ class _QueEditScreenState extends State<QueEditScreen> {
                   } else {
                     // Invalid form or no checkbox is selected as correct.
                     // Handle the error accordingly.
-                    print(
-                        'Validation failed: At least one checkbox must be selected as correct.');
                   }
                 },
                 child: const Text('save'),

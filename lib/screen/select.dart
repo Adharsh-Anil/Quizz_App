@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/db/db_functions/db_functions.dart';
 import 'package:quiz_app/screen/question.dart';
 
-class selectScreen extends StatelessWidget {
-  selectScreen({super.key, required this.color});
+class SelectScreen extends StatelessWidget {
+  SelectScreen({super.key, required this.color});
 
   final QuestionsDb db = QuestionsDb();
   final Color color;
@@ -73,8 +73,10 @@ class selectScreen extends StatelessWidget {
                                 ),
                               ));
                         },
-                        child:
-                            OptionSelection(numbers: (index + 1).toString(),ifNull: db.answers[index]==null,)),
+                        child: OptionSelection(
+                          numbers: (index + 1).toString(),
+                          ifNull: db.answers[index] == null,
+                        )),
                     separatorBuilder: (context, index) => const SizedBox(
                       width: 20,
                     ),
@@ -94,7 +96,8 @@ class OptionSelection extends StatelessWidget {
   const OptionSelection(
       {super.key,
       required this.numbers,
-      this.wright = false,this.ifNull=false,
+      this.wright = false,
+      this.ifNull = false,
       this.toCongrats = true});
   final String numbers;
   final bool? wright;

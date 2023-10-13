@@ -76,10 +76,10 @@ class _AdminScreenState extends State<AdminScreen> {
                   ),
                 ),
               ),
-              answerOption(isTrue: a, controller: answer0Controller, value: 0),
-              answerOption(isTrue: b, controller: answer1Controller, value: 1),
-              answerOption(isTrue: c, controller: answer2Controller, value: 2),
-              answerOption(isTrue: d, controller: answer3Controller, value: 3),
+              AnswerOption(isTrue: a, controller: answer0Controller, value: 0),
+              AnswerOption(isTrue: b, controller: answer1Controller, value: 1),
+              AnswerOption(isTrue: c, controller: answer2Controller, value: 2),
+              AnswerOption(isTrue: d, controller: answer3Controller, value: 3),
               const SizedBox(
                 height: 10,
               ),
@@ -125,7 +125,6 @@ class _AdminScreenState extends State<AdminScreen> {
                       validateCorrectAnswer()) {
                     if (selectedCategory == null ||
                         selectedDifficulty == null) {
-                      print('add dropdown field');
                       // Category and/or difficulty not selected, show an error message.
                       final ScaffoldMessengerState scaffoldMessenger =
                           ScaffoldMessenger.of(context);
@@ -153,11 +152,7 @@ class _AdminScreenState extends State<AdminScreen> {
                         difficulty: selectedDifficulty!,
                       );
                       await QuestionsDb().addQuestions(question);
-                      print(question.question);
-                      print(question.answers);
-                      print(question.correctAnswer);
-                      print(question.difficulty);
-                      print(question.category);
+                      
                       questionController.clear();
                       answer0Controller.clear();
                       answer1Controller.clear();
@@ -175,8 +170,6 @@ class _AdminScreenState extends State<AdminScreen> {
                   } else {
                     // Invalid form or no checkbox is selected as correct.
                     // Handle the error accordingly.
-                    print(
-                        'Validation failed: At least one checkbox must be selected as correct.');
                   }
                 },
                 child: const Text('Add'),
@@ -190,8 +183,8 @@ class _AdminScreenState extends State<AdminScreen> {
 }
 
 // ignore: must_be_immutable
-class answerOption extends StatefulWidget {
-  answerOption(
+class AnswerOption extends StatefulWidget {
+  AnswerOption(
       {required this.isTrue,
       required this.controller,
       super.key,
@@ -201,10 +194,10 @@ class answerOption extends StatefulWidget {
   TextEditingController controller;
 
   @override
-  State<answerOption> createState() => _answerOptionState();
+  State<AnswerOption> createState() => _AnswerOptionState();
 }
 
-class _answerOptionState extends State<answerOption> {
+class _AnswerOptionState extends State<AnswerOption> {
   @override
   Widget build(BuildContext context) {
     return Padding(

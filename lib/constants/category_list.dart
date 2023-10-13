@@ -6,5 +6,5 @@ List<String> categoryItems = [
   'Chemistry',
   'Sports',
   'Geography',
-  'Politics &\nEntertainment'
+  'Politics'
 ];
